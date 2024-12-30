@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mutlu Ev Fabrikası</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: url('images/background.png') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 80px;
+            z-index: 1000;
+            background-color: transparent;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        header.scrolled {
+            background-color: #fff;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header .logo img {
+            height: 50px;
+            cursor: pointer;
+        }
+
+        header .nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        header .nav a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #2A7397;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            clip-path: polygon(10% 0, 90% 0, 100% 100%, 0% 100%);
+            transition: all 0.3s ease;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        header .nav a:hover {
+            background-color: #1E5876;
+            transform: scale(1.1);
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background: url('images/hero.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .info-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px 100px;
+            gap: 50px;
+        }
+
+        .info-section .text {
+            flex: 1;
+            text-align: left;
+        }
+
+        .info-section h1 {
+            font-size: 36px;
+            color: #2A7397;
+            margin-bottom: 10px;
+        }
+
+        .info-section p {
+            font-size: 18px;
+            color: #555;
+        }
+
+        .gallery {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .gallery .row {
+            display: flex;
+            gap: 10px;
+            justify-content: space-between;
+        }
+		 .gallery .row:nth-child(2) {
+            justify-content: center;
+        }
+
+        .gallery img {
+            width: 350px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .materials-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            padding: 50px 100px;
+        }
+
+        .materials-section .material {
+            flex: 1;
+            text-align: center;
+        }
+
+        .materials-section img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .materials-section h2 {
+            font-size: 24px;
+            color: #2A7397;
+            margin-top: 10px;
+        }
+
+        .materials-section p {
+            font-size: 18px;
+            color: #555;
+        }
+
+        footer {
+            background-color: #2A7397;
+            color: #fff;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            position: relative;
+        }
+
+        footer .left {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 25px;
+            flex: 1;
+        }
+
+        footer .social-links {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        footer .social-links img {
+            width: 30px;
+            height: 30px;
+        }
+
+        footer .location {
+            text-align: center;
+            flex: 2;
+        }
+
+        footer .location iframe {
+            border-radius: 10px;
+            border: 2px solid white;
+            margin-bottom: 10px;
+            width: 100%;
+            max-width: 400px;
+            height: 200px;
+        }
+
+        footer .location p {
+            font-size: 14px;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        footer .nav {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        footer .nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+        }
+
+        footer .credits {
+            margin-top: 50px;
+            font-size: 14px;
+            text-align: center;
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+
+<header id="header">
+    <div class="logo">
+        <img src="images/logo.png" alt="Şirket Logosu" onclick="location.href='index.html'">
+    </div>
+    <nav class="nav">
+        <a href="about.html">Hakkında</a>
+        <a href="products.html">Ürünler</a>
+        <a href="career.html">Kariyer</a>
+        <a href="contact.html">Bize Ulaşın</a>
+    </nav>
+</header>
+
+<div class="hero">
+    <h1>Mutlu Ev Fabrikası</h1>
+</div>
+
+<div class="info-section">
+    <div class="text">
+        <h1>Mutlu Ev Fabrikası</h1>
+        <p>Kayı Park Hizmetlerimiz</p>
+    </div>
+    <div class="gallery">
+        <div class="row">
+            <img src="images/photo1.jpg" alt="Resim 1">
+            <img src="images/photo2.jpg" alt="Resim 2">
+            <img src="images/photo3.jpg" alt="Resim 3">
+        </div>
+        <div class="row">
+            <img src="images/photo4.jpg" alt="Resim 4">
+            <img src="images/photo5.jpg" alt="Resim 5">
+        </div>
+        <div class="row">
+            <img src="images/photo6.jpg" alt="Resim 6">
+            <img src="images/photo7.jpg" alt="Resim 7">
+            <img src="images/photo8.jpg" alt="Resim 8">
+        </div>
+    </div>
+</div>
+
+<div class="materials-section">
+    <div class="material">
+        <img src="images/wood.jpg" alt="Ahşap">
+        <h2>AHŞAP</h2>
+        <p>Ahşap Ürünlerimiz</p>
+    </div>
+    <div class="material">
+        <img src="images/metal.jpg" alt="Metal">
+        <h2>METAL</h2>
+        <p>Metal Ürünlerimiz</p>
+    </div>
+</div>
+
+<footer>
+    <div class="left">
+        <img src="images/logo2.png" alt="Logo 2">
+        <div class="social-links">
+            <a href="https://instagram.com"><img src="images/instagram.png" alt="Instagram"></a>
+            <a href="https://twitter.com"><img src="images/x.png" alt="Twitter"></a>
+            <a href="https://youtube.com"><img src="images/youtube.png" alt="YouTube"></a>
+            <a href="https://linkedin.com"><img src="images/linkedin.png" alt="LinkedIn"></a>
+            <a href="https://whatsapp.com"><img src="images/whatsapp.png" alt="WhatsApp"></a>
+        </div>
+    </div>
+    <div class="location">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1524.358246890609!2d29.98912732393135!3d40.170865527579934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cb8558dd7a053f%3A0xc3a889241a39a39d!2sKAYI%20PARK%20SANAY%C4%B0!5e0!3m2!1str!2str!4v1735587101171!5m2!1str!2str" allowfullscreen="" loading="lazy"></iframe>
+        <p><strong>KayıPark Çelik Sanayi</strong> 1.Organize Sanayi Bölgesi 8.Cadde No:1 Merkez/Bilecik</p>
+    </div>
+    <div class="nav">
+        <a href="about.html">Hakkında</a>
+        <a href="products.html">Ürünler</a>
+        <a href="career.html">Kariyer</a>
+        <a href="contact.html">Bize Ulaşın</a>
+    </div>
+    <div class="credits">
+        © 2025 KayıPark Sanayi· Tüm Hakları Saklıdır.<br>
+        <a href="#">KAYRUMAY</a> 
+    </div>
+</footer>
+
+<script>
+    const header = document.getElementById('header');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+</script>
+
+</body>
+</html>

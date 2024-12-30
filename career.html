@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kariyer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: url('images/kariyer.png') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 80px;
+            z-index: 1000;
+            background-color: transparent;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        header.scrolled {
+            background-color: #2A7397;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header .logo img {
+            height: 50px;
+            cursor: pointer;
+        }
+
+        header .nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        header .nav a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #2A7397;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            clip-path: polygon(10% 0, 90% 0, 100% 100%, 0% 100%);
+            transition: all 0.3s ease;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        header .nav a:hover {
+            background-color: #1E5876;
+            transform: scale(1.1);
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        main {
+            max-width: 800px;
+            margin: 150px auto 20px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        main h2 {
+            margin-bottom: 10px;
+            font-size: 28px;
+            color: #2A7397;
+        }
+
+        main p {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        main a {
+            color: #2A7397;
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #2A7397;
+            color: #fff;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            position: relative;
+        }
+
+        footer .left {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 15px;
+            flex: 1;
+        }
+
+        footer .social-links {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        footer .social-links img {
+            width: 30px;
+            height: 30px;
+        }
+
+        footer .credits {
+            text-align: center;
+            flex: 1;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<header id="header">
+    <div class="logo">
+        <img src="images/logo.png" alt="Şirket Logosu" onclick="location.href='index.html'">
+    </div>
+    <nav class="nav">
+        <a href="about.html">Hakkında</a>
+        <a href="products.html">Ürünler</a>
+        <a href="career.html">Kariyer</a>
+        <a href="contact.html">Bize Ulaşın</a>
+    </nav>
+</header>
+
+<main>
+    <h2>Kariyer Fırsatları</h2>
+    <p>
+        Mutlu Ev Fabrikası olarak dinamik ve yaratıcı bir ekipte yer almak ister misiniz? 
+        Firmamızda kariyer fırsatları, profesyonel gelişim ve yenilikçi çalışma ortamı sizleri bekliyor.
+    </p>
+    <p>
+        Açık pozisyonlarımız arasında üretim uzmanı, proje yöneticisi ve tasarımcı bulunmaktadır. 
+        Başvurularınızı <a href="mailto:kariyer@kayipark.com">kariyer@kayipark.com</a> adresine gönderebilirsiniz.
+    </p>
+</main>
+
+<footer>
+    <div class="left">
+        <img src="images/logo2.png" alt="Logo 2">
+        <div class="social-links">
+            <a href="https://instagram.com"><img src="images/instagram.png" alt="Instagram"></a>
+            <a href="https://twitter.com"><img src="images/x.png" alt="Twitter"></a>
+            <a href="https://youtube.com"><img src="images/youtube.png" alt="YouTube"></a>
+            <a href="https://linkedin.com"><img src="images/linkedin.png" alt="LinkedIn"></a>
+            <a href="https://whatsapp.com"><img src="images/whatsapp.png" alt="WhatsApp"></a>
+        </div>
+    </div>
+    <div class="credits">
+        © 2025 KayıPark Sanayi· Tüm Hakları Saklıdır.<br>
+        <a href="#">KAYRUMAY</a> tarafından yapılmıştır.
+    </div>
+</footer>
+
+<script>
+    const header = document.getElementById('header');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+</script>
+
+</body>
+</html>
